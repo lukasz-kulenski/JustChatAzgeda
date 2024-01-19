@@ -1,0 +1,162 @@
+.constraint {
+    width: 90%;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.bricks-theme {
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+
+        --s: 50px;
+        /* control the size */
+
+        --p: at 45% 40%, #0000 75%, ;
+        --g1: conic-gradient(var(--p)#c0b299 0);
+        --g2: conic-gradient(var(--p)#a4a9aa 0);
+        background:
+            var(--g1), var(--g2) calc(2*var(--s)) 0,
+            var(--g2) calc(3*var(--s)) var(--s),
+            var(--g1) var(--s) var(--s) #2c2e2a;
+        background-size: calc(4*var(--s)) calc(2*var(--s));
+    }
+}
+
+.christmas-theme {
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        opacity: 0.85;
+
+        --s: 75px;
+        /* control the size */
+
+        --_c: #0000, #fff 1deg 79deg, #0000 81deg;
+        --g0: conic-gradient(from 140deg at 50% 87.5%, var(--_c));
+        --g1: conic-gradient(from 140deg at 50% 81.25%, var(--_c));
+        --g2: conic-gradient(from 140deg at 50% 75%, var(--_c));
+        --g3: conic-gradient(at 10% 20%, #0000 75%, #fff 0);
+        background:
+            var(--g0) 0 calc(var(--s)/-4), var(--g0) var(--s) calc(3*var(--s)/4),
+            var(--g1), var(--g1) var(--s) var(--s),
+            var(--g2) 0 calc(var(--s)/ 4), var(--g2) var(--s) calc(5*var(--s)/4),
+            var(--g3) calc(var(--s)/-10) var(--s),
+            var(--g3) calc(9*var(--s)/10) calc(2*var(--s)),
+            repeating-conic-gradient(from 45deg, #388429 0 25%, #2ca79ceb 0 50%);
+        background-size: calc(2*var(--s)) calc(2*var(--s));
+    }
+}
+
+.overlapping-cubes {
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        opacity: 0.2;
+
+        --s: 48px;
+        /* control the size*/
+        --c1: #fffdfd;
+        --c2: #c5bac0;
+        --c3: #dbd8ca;
+
+        --_g: 0 120deg, #0000 0;
+        background: conic-gradient(from 0deg at calc(500% / 6) calc(100% / 3),
+                var(--c3) var(--_g)),
+            conic-gradient(from -120deg at calc(100% / 6) calc(100% / 3),
+                var(--c2) var(--_g)),
+            conic-gradient(from 120deg at calc(100% / 3) calc(500% / 6),
+                var(--c1) var(--_g)),
+            conic-gradient(from 120deg at calc(200% / 3) calc(500% / 6),
+                var(--c1) var(--_g)),
+            conic-gradient(from -180deg at calc(100% / 3) 50%,
+                var(--c2) 60deg,
+                var(--c1) var(--_g)),
+            conic-gradient(from 60deg at calc(200% / 3) 50%,
+                var(--c1) 60deg,
+                var(--c3) var(--_g)),
+            conic-gradient(from -60deg at 50% calc(100% / 3),
+                var(--c1) 120deg,
+                var(--c2) 0 240deg,
+                var(--c3) 0);
+        background-size: calc(var(--s) * 1.732) var(--s);
+    }
+}
+
+.geometric-figures {
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        opacity: 0.65;
+
+        --s: 160px;
+        /* control the size*/
+        --c1: #E08E79;
+        --c2: #F1D4AF;
+        --c3: #955E3E;
+
+        background:
+            conic-gradient(from 15deg at 86.6%,
+                var(--c3) 25%, var(--c2) 0 150deg, #0000 0),
+            conic-gradient(from -75deg at 50% 13.39%,
+                var(--c1) 60deg, var(--c3) 0 150deg,
+                var(--c2) 0 210deg, #0000 0),
+            conic-gradient(from 15deg at 36.6% 63.4%,
+                var(--c1) 60deg, var(--c3) 0 150deg,
+                var(--c1) 0 210deg, var(--c2) 0 75%, var(--c3) 0);
+        background-size: var(--s) var(--s);
+    }
+
+}
+
+.town {
+    &::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 7%;
+        background-repeat: no-repeat;
+        flex: 0 0 75px;
+        background-image: url("../assets/town.png");
+        background-size: contain;
+        background-position: center bottom;
+    }
+}
+
+.town-preview {
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-repeat: no-repeat;
+        flex: 0 0 75px;
+        background-image: url("../assets/town.png");
+        background-size: contain;
+        background-position: center bottom;
+    }
+}
